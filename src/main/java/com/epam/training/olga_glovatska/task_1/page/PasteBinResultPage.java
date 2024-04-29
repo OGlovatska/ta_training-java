@@ -33,7 +33,7 @@ public class PasteBinResultPage extends BasePage {
         return pasteTitle.getText();
     }
 
-    public String getExpire(){
+    public String getExpiration(){
         return expiration.getText();
     }
 }

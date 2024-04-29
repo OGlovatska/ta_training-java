@@ -35,6 +35,7 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>${junit5.version}</version>
         </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>

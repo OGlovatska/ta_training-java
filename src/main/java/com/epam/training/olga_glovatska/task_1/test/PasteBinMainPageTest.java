@@ -21,6 +21,6 @@ public class PasteBinMainPageTest extends BaseTest{
 
         assertEquals(PASTE_TEXT, result.getPasteText());
         assertEquals(PASTE_TITLE, result.getPasteTitle());
-        assertEquals(EXPECTED_EXPIRATION, result.getExpire());
+        assertEquals(EXPECTED_EXPIRATION, result.getExpiration());
     }
 }
