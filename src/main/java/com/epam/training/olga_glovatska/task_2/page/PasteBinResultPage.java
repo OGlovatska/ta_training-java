@@ -42,10 +42,6 @@ public class PasteBinResultPage extends BasePage {
         return pasteTitle.getText();
     }
 
-    public String getExpiration(){
-        return expiration.getText();
-    }
-
     public String syntaxHighlighting(){
         return syntaxHighlighting.getText();
     }

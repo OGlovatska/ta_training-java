@@ -59,11 +59,6 @@ public class PasteBinMainPage extends BasePage {
 
     public PasteBinResultPage createNewPaste(){
         createNewPasteButton.click();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         return new PasteBinResultPage(webDriver);
     }
 }
