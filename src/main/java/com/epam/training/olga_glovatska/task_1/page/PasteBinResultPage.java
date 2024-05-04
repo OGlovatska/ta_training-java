@@ -1,10 +1,21 @@
 package com.epam.training.olga_glovatska.task_1.page;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import static com.epam.training.olga_glovatska.task_1.util.WaitUtil.waitForElementVisibility;
 
 public class PasteBinResultPage extends BasePage {
+
+    @FindBy(xpath = "//*[@class='de1']")
+    private WebElement pasteText;
+
+    @FindBy(xpath = "//*[@class='info-top']")
+    private WebElement pasteTitle;
+
+    @FindBy(xpath = "//*[@class='expire']")
+    private WebElement expiration;
 
     public PasteBinResultPage(WebDriver webDriver) {
         super(webDriver);
@@ -17,17 +28,17 @@ public class PasteBinResultPage extends BasePage {
     }
 
     public String getPasteText(){
-        WebElement pasteText = getElementWithWaitVisibility(By.xpath("//*[@class='de1']"));
+        waitForElementVisibility(webDriver, pasteText, 15);
         return pasteText.getText();
     }
 
     public String getPasteTitle(){
-        WebElement pasteTitle = getElementWithWaitVisibility(By.xpath("//*[@class='info-top']"));
+        waitForElementVisibility(webDriver, pasteTitle, 15);
         return pasteTitle.getText();
     }
 
     public String getExpiration(){
-        WebElement expiration = getElementWithWaitVisibility(By.xpath("//*[@class='expire']"));
+        waitForElementVisibility(webDriver, expiration, 15);
         return expiration.getText();
     }
 }
