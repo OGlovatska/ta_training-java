@@ -1,4 +1,4 @@
-package com.epam.training.olga_glovatska.task_1.util;
+package task_1.util;
 
 public class TestData {
     public static final String PASTE_TEXT = "Hello from WebDriver";
