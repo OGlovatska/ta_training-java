@@ -6,16 +6,12 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+import static com.epam.training.olga_glovatska.task_2.util.WaitUtil.*;
+
 public class PasteBinResultPage extends BasePage {
 
     @FindBy(xpath = "//*[@class='de1']")
     private List<WebElement> pasteText;
-
-    @FindBy(xpath = "//*[@class='info-top']")
-    private WebElement pasteTitle;
-
-    @FindBy(xpath = "//*[@class='expire']")
-    private WebElement expiration;
 
     @FindBy(xpath = "//div[@class='left']/a[@class='btn -small h_800']")
     private WebElement syntaxHighlighting;
@@ -31,6 +27,7 @@ public class PasteBinResultPage extends BasePage {
     }
 
     public String getPasteText(){
+        waitForElementsVisibility(webDriver, pasteText, 15);
         StringBuilder pasteText = new StringBuilder();
         for (WebElement element : this.pasteText){
             pasteText.append(element.getText()).append("\n");
@@ -38,11 +35,8 @@ public class PasteBinResultPage extends BasePage {
         return pasteText.toString().trim();
     }
 
-    public String getPasteTitle(){
-        return pasteTitle.getText();
-    }
-
     public String syntaxHighlighting(){
+        waitForElementVisibility(webDriver, syntaxHighlighting, 15);
         return syntaxHighlighting.getText();
     }
 }
