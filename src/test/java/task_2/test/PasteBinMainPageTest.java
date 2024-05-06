@@ -4,7 +4,7 @@ import com.epam.training.olga_glovatska.task_2.page.PasteBinMainPage;
 import com.epam.training.olga_glovatska.task_2.page.PasteBinResultPage;
 import org.junit.jupiter.api.Test;
 
-import static task_2.util.TestData.*;
+import static com.epam.training.olga_glovatska.task_2.util.TestData.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PasteBinMainPageTest extends BaseTest {

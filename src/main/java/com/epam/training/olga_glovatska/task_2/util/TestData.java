@@ -1,4 +1,4 @@
-package task_2.util;
+package com.epam.training.olga_glovatska.task_2.util;
 
 public class TestData {
     public static final String PASTE_TEXT = """
