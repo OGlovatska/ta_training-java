@@ -1,4 +1,4 @@
-package task_2.test;
+package com.epam.training.olga_glovatska.task_1;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
