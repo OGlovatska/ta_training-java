@@ -7,10 +7,10 @@ import java.util.Set;
 
 import static com.epam.training.olga_glovatska.task_3.util.WaitUtil.waitForOpenNewTab;
 
-public class PopUpBase {
+public class BasePopUp {
     protected final WebDriver webDriver;
 
-    public PopUpBase(WebDriver webDriver) {
+    public BasePopUp(WebDriver webDriver) {
         this.webDriver = webDriver;
         PageFactory.initElements(this.webDriver, this);
     }

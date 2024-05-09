@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import static com.epam.training.olga_glovatska.task_3.util.WaitUtil.waitForElementVisibility;
 
-public class AddToEstimatePopUp extends PopUpBase {
+public class AddToEstimatePopUp extends BasePopUp {
 
     @FindBy(xpath = "//h2[text()='Compute Engine']")
     private WebElement computerEngineButton;

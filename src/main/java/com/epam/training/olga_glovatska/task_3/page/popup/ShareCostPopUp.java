@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import static com.epam.training.olga_glovatska.task_3.util.WaitUtil.*;
 
-public class ShareCostPopUp extends PopUpBase {
+public class ShareCostPopUp extends BasePopUp {
 
     @FindBy(xpath = "//a[@track-name='open estimate summary']")
     private WebElement openEstimateSummaryButton;
