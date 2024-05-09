@@ -8,7 +8,7 @@ import static com.epam.training.olga_glovatska.task_3.util.WaitUtil.waitForEleme
 
 public class GoogleCloudSearchResultPage extends BasePage {
 
-    @FindBy(xpath = "//span[contains(text(), 'calculator')]/ancestor::div[@class='x9K9hf wVBoU']//a[@class='K5hUy']")
+    @FindBy(xpath = "//span[text()='calculator']/ancestor::div/preceding-sibling::div/a")
     private WebElement calculator;
 
     public GoogleCloudSearchResultPage(WebDriver webDriver) {
@@ -21,9 +21,9 @@ public class GoogleCloudSearchResultPage extends BasePage {
                 "and should not be accessed directly.");
     }
 
-    public GoogleCloudPlatformPricingCalculator clickCalculator(){
+    public GoogleCloudPlatformPricingCalculatorPage clickCalculator(){
         waitForElementVisibility(webDriver, calculator, 15);
         calculator.click();
-        return new GoogleCloudPlatformPricingCalculator(webDriver);
+        return new GoogleCloudPlatformPricingCalculatorPage(webDriver);
     }
 }

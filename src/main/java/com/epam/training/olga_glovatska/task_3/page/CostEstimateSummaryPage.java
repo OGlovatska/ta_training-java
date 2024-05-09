@@ -8,34 +8,34 @@ import static com.epam.training.olga_glovatska.task_3.util.WaitUtil.waitForEleme
 
 public class CostEstimateSummaryPage extends BasePage{
 
-    @FindBy(xpath = "//h4[@class='n8xu5 Nh2Phe D0aEmf']")
+    @FindBy(xpath = "//h5[text()='Total estimated cost']/following-sibling::h4")
     private WebElement totalEstimatedCost;
 
-    @FindBy(xpath = "//span[text()='Number of Instances']/following-sibling::span[@class='Kfvdz']")
+    @FindBy(xpath = "//span[text()='Number of Instances']/following-sibling::span")
     private WebElement numberOfInstances;
 
-    @FindBy(xpath = "//span[text()='Operating System / Software']/following-sibling::span[@class='Kfvdz']")
+    @FindBy(xpath = "//span[text()='Operating System / Software']/following-sibling::span")
     private WebElement operatingSystem;
 
-    @FindBy(xpath = "//span[text()='Provisioning Model']/following-sibling::span[@class='Kfvdz']")
+    @FindBy(xpath = "//span[text()='Provisioning Model']/following-sibling::span")
     private WebElement provisioningModel;
 
-    @FindBy(xpath = "//span[text()='Machine type']/following-sibling::span[@class='Kfvdz']")
+    @FindBy(xpath = "//span[text()='Machine type']/following-sibling::span")
     private WebElement machineType;
 
-    @FindBy(xpath = "//span[text()='GPU Model']/following-sibling::span[@class='Kfvdz']")
+    @FindBy(xpath = "//span[text()='GPU Model']/following-sibling::span")
     private WebElement modelGPU;
 
-    @FindBy(xpath = "//span[text()='Number of GPUs']/following-sibling::span[@class='Kfvdz']")
+    @FindBy(xpath = "//span[text()='Number of GPUs']/following-sibling::span")
     private WebElement numberOfGPUs;
 
-    @FindBy(xpath = "//span[text()='Local SSD']/following-sibling::span[@class='Kfvdz']")
+    @FindBy(xpath = "//span[text()='Local SSD']/following-sibling::span")
     private WebElement localSSD;
 
-    @FindBy(xpath = "//span[text()='Region']/following-sibling::span[@class='Kfvdz']")
+    @FindBy(xpath = "//span[text()='Region']/following-sibling::span")
     private WebElement region;
 
-    @FindBy(xpath = "//span[text()='Committed use discount options']/following-sibling::span[@class='Kfvdz']")
+    @FindBy(xpath = "//span[text()='Committed use discount options']/following-sibling::span")
     private WebElement committedUse;
 
     public CostEstimateSummaryPage(WebDriver webDriver) {

@@ -2,7 +2,7 @@ package com.epam.training.olga_glovatska.task_3;
 
 import com.epam.training.olga_glovatska.task_3.page.CostEstimateSummaryPage;
 import com.epam.training.olga_glovatska.task_3.page.GoogleCloudMainPage;
-import com.epam.training.olga_glovatska.task_3.page.GoogleCloudPlatformPricingCalculator;
+import com.epam.training.olga_glovatska.task_3.page.GoogleCloudPlatformPricingCalculatorPage;
 import com.epam.training.olga_glovatska.task_3.page.GoogleCloudSearchResultPage;
 import com.epam.training.olga_glovatska.task_3.page.popup.ShareCostPopUp;
 import org.junit.jupiter.api.Test;
@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import static com.epam.training.olga_glovatska.task_3.util.TestData.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class GoogleCloudMainPageTest extends BaseTest {
+public class GoogleCloudPlatformPricingCalculatorPageTest extends BaseTest {
 
     @Test
     public void searchTest() {
@@ -18,7 +18,7 @@ public class GoogleCloudMainPageTest extends BaseTest {
 
         GoogleCloudSearchResultPage resultPage = initiateCalculatorSearch(page);
 
-        GoogleCloudPlatformPricingCalculator calculator = fillOutFormAndCalculate(resultPage);
+        GoogleCloudPlatformPricingCalculatorPage calculator = fillOutFormAndCalculate(resultPage);
 
         String costFromCalculator = calculator.getEstimateCost();
         calculator.clickAddToEstimateOnCostDetailsButton().clickCloseButton();
@@ -47,7 +47,7 @@ public class GoogleCloudMainPageTest extends BaseTest {
         assertEquals(COMMITTED_USE_DISCOUNT_OPTIONS, summaryPage.getCommittedUse());
     }
 
-    private GoogleCloudPlatformPricingCalculator fillOutFormAndCalculate(GoogleCloudSearchResultPage resultPage) {
+    private GoogleCloudPlatformPricingCalculatorPage fillOutFormAndCalculate(GoogleCloudSearchResultPage resultPage) {
         return resultPage
                 .clickCalculator()
                 .clickAddToEstimateButton()

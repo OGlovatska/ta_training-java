@@ -10,10 +10,10 @@ public class GoogleCloudMainPage extends BasePage {
     @FindBy(xpath = "//div[@class='YSM5S']")
     private WebElement magnifyingGlassIcon;
 
-    @FindBy(xpath = "//input[@class='qdOxv-fmcmS-wGMbrd']")
+    @FindBy(xpath = "//input[@aria-label='Search']")
     private WebElement searchInputField;
 
-    @FindBy(xpath = "//i[@class='google-material-icons PETVs PETVs-OWXEXe-UbuQg']")
+    @FindBy(xpath = "//i[@aria-label='Search']")
     private WebElement searchInitButton;
 
     public GoogleCloudMainPage(WebDriver webDriver) {
