@@ -1,4 +1,4 @@
-package task_1.test;
+package com.epam.training.olga_glovatska.task_1;
 
 import com.epam.training.olga_glovatska.task_1.page.PasteBinMainPage;
 import com.epam.training.olga_glovatska.task_1.page.PasteBinResultPage;
