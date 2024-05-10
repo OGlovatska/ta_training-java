@@ -3,10 +3,12 @@ package com.epam.training.olga_glovatska.framework.model;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.ToString;
 
 @EqualsAndHashCode
 @Builder
 @Getter
+@ToString
 public class GoogleCloudPricingCalculator {
 
     private final String numberOfInstances;

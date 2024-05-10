@@ -1,5 +1,6 @@
 package com.epam.training.olga_glovatska.framework.page;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -48,53 +49,58 @@ public class CostEstimateSummaryPage extends BasePage {
                 "and can not be accessed directly.");
     }
 
-    public String getTotalEstimatedCost(){
+    public String getTotalEstimatedCost() {
         waitForElementVisibility(driver, totalEstimatedCost, 10);
         return totalEstimatedCost.getText();
     }
 
-    public String getNumberOfInstances(){
+    public String getNumberOfInstances() {
         waitForElementVisibility(driver, numberOfInstances, 10);
         return numberOfInstances.getText();
     }
 
-    public String getOperationSystem(){
+    public String getOperationSystem() {
         waitForElementVisibility(driver, operatingSystem, 10);
         return operatingSystem.getText();
     }
 
-    public String getProvisioningModel(){
+    public String getProvisioningModel() {
         waitForElementVisibility(driver, provisioningModel, 10);
         return provisioningModel.getText();
     }
 
-    public String getMachineType(){
+    public String getMachineType() {
         waitForElementVisibility(driver, machineType, 10);
         return machineType.getText();
     }
 
-    public String getModelGPU(){
-        waitForElementVisibility(driver, modelGPU, 10);
-        return modelGPU.getText();
+    public String getModelGPU() {
+        return isModelGPUDisplayed() ? modelGPU.getText() : null;
     }
 
-    public String getNumberOfGPUs(){
-        waitForElementVisibility(driver, numberOfGPUs, 10);
-        return numberOfGPUs.getText();
+    public String getNumberOfGPUs() {
+        return isModelGPUDisplayed() ? numberOfGPUs.getText() : null;
     }
 
-    public String getLocalSSD(){
-        waitForElementVisibility(driver, localSSD, 10);
-        return localSSD.getText();
+    public String getLocalSSD() {
+        return isModelGPUDisplayed() ? localSSD.getText() : null;
     }
 
-    public String getRegion(){
+    public String getRegion() {
         waitForElementVisibility(driver, region, 10);
         return region.getText();
     }
 
-    public String getCommittedUse(){
+    public String getCommittedUse() {
         waitForElementVisibility(driver, committedUse, 10);
         return committedUse.getText();
+    }
+
+    public boolean isModelGPUDisplayed() {
+        try {
+            return numberOfGPUs.isDisplayed();
+        } catch (NoSuchElementException e) {
+            return false;
+        }
     }
 }

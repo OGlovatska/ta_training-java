@@ -3,6 +3,7 @@ package com.epam.training.olga_glovatska.framework.page;
 import com.epam.training.olga_glovatska.framework.page.popup.AddToEstimatePopUp;
 import com.epam.training.olga_glovatska.framework.page.popup.ShareCostPopUp;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -116,21 +117,19 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
     }
 
     public GoogleCloudPricingCalculatorPage selectMachineFamily(String machineFamily) {
-        waitForElementVisibility(driver, machineFamilyDropDown, 10);
-        machineFamilyDropDown.click();
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", machineFamilyDropDown);
 
         WebElement option = driver.findElement(By.xpath("//span[text() = '" + machineFamily + "']/ancestor::li"));
-        waitForElementVisibility(driver, option, 10);
+        waitForElementVisibility(driver, option, 20);
         option.click();
         return this;
     }
 
     public GoogleCloudPricingCalculatorPage selectSeries(String series) {
-        waitForElementVisibility(driver, seriesDropDown, 10);
-        seriesDropDown.click();
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", seriesDropDown);
 
         WebElement option = driver.findElement(By.xpath("//span[text() = '" + series + "']/ancestor::li"));
-        waitForElementVisibility(driver, option, 15);
+        waitForElementVisibility(driver, option, 40);
         option.click();
         return this;
     }
