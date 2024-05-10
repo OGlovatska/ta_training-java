@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.epam.training.olga_glovatska.framework.page.util.WaitUtil.waitForElementVisibility;
+import static com.epam.training.olga_glovatska.framework.util.WaitUtil.waitForElementVisibility;
 
 public class CostEstimateSummaryPage extends BasePage {
 
@@ -49,52 +49,52 @@ public class CostEstimateSummaryPage extends BasePage {
     }
 
     public String getTotalEstimatedCost(){
-        waitForElementVisibility(webDriver, totalEstimatedCost, 10);
+        waitForElementVisibility(driver, totalEstimatedCost, 10);
         return totalEstimatedCost.getText();
     }
 
     public String getNumberOfInstances(){
-        waitForElementVisibility(webDriver, numberOfInstances, 10);
+        waitForElementVisibility(driver, numberOfInstances, 10);
         return numberOfInstances.getText();
     }
 
     public String getOperationSystem(){
-        waitForElementVisibility(webDriver, operatingSystem, 10);
+        waitForElementVisibility(driver, operatingSystem, 10);
         return operatingSystem.getText();
     }
 
     public String getProvisioningModel(){
-        waitForElementVisibility(webDriver, provisioningModel, 10);
+        waitForElementVisibility(driver, provisioningModel, 10);
         return provisioningModel.getText();
     }
 
     public String getMachineType(){
-        waitForElementVisibility(webDriver, machineType, 10);
+        waitForElementVisibility(driver, machineType, 10);
         return machineType.getText();
     }
 
     public String getModelGPU(){
-        waitForElementVisibility(webDriver, modelGPU, 10);
+        waitForElementVisibility(driver, modelGPU, 10);
         return modelGPU.getText();
     }
 
     public String getNumberOfGPUs(){
-        waitForElementVisibility(webDriver, numberOfGPUs, 10);
+        waitForElementVisibility(driver, numberOfGPUs, 10);
         return numberOfGPUs.getText();
     }
 
     public String getLocalSSD(){
-        waitForElementVisibility(webDriver, localSSD, 10);
+        waitForElementVisibility(driver, localSSD, 10);
         return localSSD.getText();
     }
 
     public String getRegion(){
-        waitForElementVisibility(webDriver, region, 10);
+        waitForElementVisibility(driver, region, 10);
         return region.getText();
     }
 
     public String getCommittedUse(){
-        waitForElementVisibility(webDriver, committedUse, 10);
+        waitForElementVisibility(driver, committedUse, 10);
         return committedUse.getText();
     }
 }

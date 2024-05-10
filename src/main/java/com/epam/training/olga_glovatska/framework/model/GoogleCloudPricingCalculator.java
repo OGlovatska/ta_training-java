@@ -2,9 +2,11 @@ package com.epam.training.olga_glovatska.framework.model;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
 @EqualsAndHashCode
 @Builder
+@Getter
 public class GoogleCloudPricingCalculator {
 
     private final String numberOfInstances;
@@ -31,6 +33,9 @@ public class GoogleCloudPricingCalculator {
 
     private final String committedUse;
 
-    private final String estimateCost;
+    private String estimateCost;
 
+    public void setEstimateCost(String estimateCost) {
+        this.estimateCost = estimateCost;
+    }
 }

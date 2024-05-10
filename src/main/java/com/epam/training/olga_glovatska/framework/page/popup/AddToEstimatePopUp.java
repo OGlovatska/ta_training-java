@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.epam.training.olga_glovatska.framework.page.util.WaitUtil.waitForElementVisibility;
+import static com.epam.training.olga_glovatska.framework.util.WaitUtil.waitForElementVisibility;
 
 public class AddToEstimatePopUp extends BasePopUp {
 
@@ -20,14 +20,14 @@ public class AddToEstimatePopUp extends BasePopUp {
     }
 
     public GoogleCloudPricingCalculatorPage clickComputerEngineButton() {
-        waitForElementVisibility(webDriver, computerEngineButton, 10);
+        waitForElementVisibility(driver, computerEngineButton, 10);
         computerEngineButton.click();
-        return new GoogleCloudPricingCalculatorPage(webDriver);
+        return new GoogleCloudPricingCalculatorPage(driver);
     }
 
     public GoogleCloudPricingCalculatorPage clickCloseButton(){
-        waitForElementVisibility(webDriver, closeButton, 10);
+        waitForElementVisibility(driver, closeButton, 10);
         closeButton.click();
-        return new GoogleCloudPricingCalculatorPage(webDriver);
+        return new GoogleCloudPricingCalculatorPage(driver);
     }
 }

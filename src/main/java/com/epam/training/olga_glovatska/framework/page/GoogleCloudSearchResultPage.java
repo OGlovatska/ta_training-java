@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.epam.training.olga_glovatska.framework.page.util.WaitUtil.waitForElementVisibility;
+import static com.epam.training.olga_glovatska.framework.util.WaitUtil.waitForElementVisibility;
 
 public class GoogleCloudSearchResultPage extends BasePage {
 
@@ -22,8 +22,8 @@ public class GoogleCloudSearchResultPage extends BasePage {
     }
 
     public GoogleCloudPricingCalculatorPage clickCalculator(){
-        waitForElementVisibility(webDriver, calculator, 15);
+        waitForElementVisibility(driver, calculator, 15);
         calculator.click();
-        return new GoogleCloudPricingCalculatorPage(webDriver);
+        return new GoogleCloudPricingCalculatorPage(driver);
     }
 }

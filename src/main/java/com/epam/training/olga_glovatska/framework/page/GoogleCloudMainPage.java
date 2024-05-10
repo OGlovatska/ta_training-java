@@ -22,7 +22,7 @@ public class GoogleCloudMainPage extends BasePage {
 
     @Override
     public GoogleCloudMainPage openPage() {
-        webDriver.get(MAIN_PAGE_URL);
+        driver.get(MAIN_PAGE_URL);
         return this;
     }
 
@@ -38,6 +38,6 @@ public class GoogleCloudMainPage extends BasePage {
 
     public GoogleCloudSearchResultPage initiateSearch() {
         searchInitButton.click();
-        return new GoogleCloudSearchResultPage(webDriver);
+        return new GoogleCloudSearchResultPage(driver);
     }
 }

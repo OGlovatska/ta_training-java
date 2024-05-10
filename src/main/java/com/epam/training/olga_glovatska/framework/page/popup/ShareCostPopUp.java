@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.epam.training.olga_glovatska.framework.page.util.WaitUtil.waitForElementVisibility;
+import static com.epam.training.olga_glovatska.framework.util.WaitUtil.waitForElementVisibility;
 
 public class ShareCostPopUp extends BasePopUp {
 
@@ -20,17 +20,17 @@ public class ShareCostPopUp extends BasePopUp {
     }
 
     public CostEstimateSummaryPage clickEstimateSummaryButton() {
-        waitForElementVisibility(webDriver, openEstimateSummaryButton, 10);
+        waitForElementVisibility(driver, openEstimateSummaryButton, 10);
         openEstimateSummaryButton.click();
 
-        String originalTab = webDriver.getWindowHandle();
+        String originalTab = driver.getWindowHandle();
         switchToTab(originalTab, 2);
 
-        return new CostEstimateSummaryPage(webDriver);
+        return new CostEstimateSummaryPage(driver);
     }
 
     public String getTotalEstimatedCost() {
-        waitForElementVisibility(webDriver, totalEstimatedCost, 10);
+        waitForElementVisibility(driver, totalEstimatedCost, 10);
         return totalEstimatedCost.getText();
     }
 }

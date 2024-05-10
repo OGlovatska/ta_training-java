@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.epam.training.olga_glovatska.framework.page.util.WaitUtil.waitForElementVisibility;
+import static com.epam.training.olga_glovatska.framework.util.WaitUtil.waitForElementVisibility;
 
 public class GoogleCloudPricingCalculatorPage extends BasePage {
     private static final String CALCULATOR_PAGE = "https://cloud.google.com/products/calculator";
@@ -23,6 +23,9 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
 
     @FindBy(xpath = "//label[text()='Regular']")
     private WebElement regularProvisioningModel;
+
+    @FindBy(xpath = "//label[text()='Spot (Preemptible VM)']")
+    private WebElement spotProvisioningModel;
 
     @FindBy(xpath = "//span[text() = 'Machine Family']/ancestor::div[1]")
     private WebElement machineFamilyDropDown;
@@ -48,8 +51,14 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
     @FindBy(xpath = "//span[text()='Region']/ancestor::div[1]")
     private WebElement regionDropdown;
 
+    @FindBy(xpath = "//label[text()='None']")
+    private WebElement noneCommittedUseButton;
+
     @FindBy(xpath = "//label[text()='1 year']")
     private WebElement oneYearCommittedUseButton;
+
+    @FindBy(xpath = "//label[text()='3 years']")
+    private WebElement threeYearsCommittedUseButton;
 
     @FindBy(xpath = "//div[text()='Estimated cost']/following-sibling::div/label")
     private WebElement estimateCost;
@@ -69,29 +78,29 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
 
     @Override
     protected GoogleCloudPricingCalculatorPage openPage() {
-        webDriver.get(CALCULATOR_PAGE);
+        driver.get(CALCULATOR_PAGE);
         return this;
     }
 
     public AddToEstimatePopUp clickAddToEstimateButton() {
-        waitForElementVisibility(webDriver, addToEstimateButton, 10);
+        waitForElementVisibility(driver, addToEstimateButton, 10);
         addToEstimateButton.click();
-        return new AddToEstimatePopUp(webDriver);
+        return new AddToEstimatePopUp(driver);
     }
 
     public GoogleCloudPricingCalculatorPage insertNumberOfInstances(String number) {
-        waitForElementVisibility(webDriver, numberOfInstances, 10);
+        waitForElementVisibility(driver, numberOfInstances, 10);
         numberOfInstances.clear();
         numberOfInstances.sendKeys(number);
         return this;
     }
 
     public GoogleCloudPricingCalculatorPage selectOperationSystem(String operationSystem) {
-        waitForElementVisibility(webDriver, operatingSystemDropdown, 10);
+        waitForElementVisibility(driver, operatingSystemDropdown, 10);
         operatingSystemDropdown.click();
 
-        WebElement option = webDriver.findElement(By.xpath("//span[text() = '" + operationSystem + "']/ancestor::li"));
-        waitForElementVisibility(webDriver, option, 10);
+        WebElement option = driver.findElement(By.xpath("//span[text() = '" + operationSystem + "']/ancestor::li"));
+        waitForElementVisibility(driver, option, 10);
         option.click();
         return this;
     }
@@ -101,79 +110,89 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         return this;
     }
 
+    public GoogleCloudPricingCalculatorPage selectSpotProvisionModel() {
+        spotProvisioningModel.click();
+        return this;
+    }
+
     public GoogleCloudPricingCalculatorPage selectMachineFamily(String machineFamily) {
-        waitForElementVisibility(webDriver, machineFamilyDropDown, 10);
+        waitForElementVisibility(driver, machineFamilyDropDown, 10);
         machineFamilyDropDown.click();
 
-        WebElement option = webDriver.findElement(By.xpath("//span[text() = '" + machineFamily + "']/ancestor::li"));
-        waitForElementVisibility(webDriver, option, 10);
+        WebElement option = driver.findElement(By.xpath("//span[text() = '" + machineFamily + "']/ancestor::li"));
+        waitForElementVisibility(driver, option, 10);
         option.click();
         return this;
     }
 
     public GoogleCloudPricingCalculatorPage selectSeries(String series) {
-        waitForElementVisibility(webDriver, seriesDropDown, 10);
+        waitForElementVisibility(driver, seriesDropDown, 10);
         seriesDropDown.click();
 
-        WebElement option = webDriver.findElement(By.xpath("//span[text() = '" + series + "']/ancestor::li"));
-        waitForElementVisibility(webDriver, option, 15);
+        WebElement option = driver.findElement(By.xpath("//span[text() = '" + series + "']/ancestor::li"));
+        waitForElementVisibility(driver, option, 15);
         option.click();
         return this;
     }
 
     public GoogleCloudPricingCalculatorPage selectMachineType(String machineType) {
-        waitForElementVisibility(webDriver, machineTypeDropDown, 10);
+        waitForElementVisibility(driver, machineTypeDropDown, 50);
         machineTypeDropDown.click();
 
-        WebElement option = webDriver.findElement(By.xpath("//span[text() = '" + machineType + "']/ancestor::li"));
-        waitForElementVisibility(webDriver, option, 15);
+        WebElement option = driver.findElement(By.xpath("//span[text() = '" + machineType + "']/ancestor::li"));
+        waitForElementVisibility(driver, option, 50);
         option.click();
         return this;
     }
 
     public GoogleCloudPricingCalculatorPage switchAddGPUs() {
-        waitForElementVisibility(webDriver, addGPUsSwitcher, 10);
+        waitForElementVisibility(driver, addGPUsSwitcher, 10);
         addGPUsSwitcher.click();
         return this;
     }
 
     public GoogleCloudPricingCalculatorPage selectModelGPU(String modelGPU) {
-        waitForElementVisibility(webDriver, modelGPUDropdown, 10);
+        waitForElementVisibility(driver, modelGPUDropdown, 10);
         modelGPUDropdown.click();
 
-        WebElement option = webDriver.findElement(By.xpath("//span[text() = '" + modelGPU + "']/ancestor::li"));
-        waitForElementVisibility(webDriver, option, 10);
+        WebElement option = driver.findElement(By.xpath("//span[text() = '" + modelGPU + "']/ancestor::li"));
+        waitForElementVisibility(driver, option, 10);
         option.click();
         return this;
     }
 
     public GoogleCloudPricingCalculatorPage selectNumberOfGPUs(String number) {
-        waitForElementVisibility(webDriver, numberOfGPUsDropdown, 15);
+        waitForElementVisibility(driver, numberOfGPUsDropdown, 15);
         numberOfGPUsDropdown.click();
 
-        WebElement option = webDriver.findElement(By.xpath("//span[text() = '" + number + "']/ancestor::li"));
-        waitForElementVisibility(webDriver, option, 15);
+        WebElement option = driver.findElement(By.xpath("//span[text() = '" + number + "']/ancestor::li"));
+        waitForElementVisibility(driver, option, 15);
         option.click();
         return this;
     }
 
     public GoogleCloudPricingCalculatorPage selectLocalSSD(String value) {
-        waitForElementVisibility(webDriver, localSSDDropdown, 10);
+        waitForElementVisibility(driver, localSSDDropdown, 10);
         localSSDDropdown.click();
 
-        WebElement option = webDriver.findElement(By.xpath("//span[text() = '" + value + "']/ancestor::li"));
-        waitForElementVisibility(webDriver, option, 10);
+        WebElement option = driver.findElement(By.xpath("//span[text() = '" + value + "']/ancestor::li"));
+        waitForElementVisibility(driver, option, 10);
         option.click();
         return this;
     }
 
     public GoogleCloudPricingCalculatorPage selectRegion(String region) {
-        waitForElementVisibility(webDriver, regionDropdown, 10);
+        waitForElementVisibility(driver, regionDropdown, 10);
         regionDropdown.click();
 
-        WebElement option = webDriver.findElement(By.xpath("//span[text() = '" + region + "']/ancestor::li"));
-        waitForElementVisibility(webDriver, option, 10);
+        WebElement option = driver.findElement(By.xpath("//span[text() = '" + region + "']/ancestor::li"));
+        waitForElementVisibility(driver, option, 10);
         option.click();
+        return this;
+    }
+
+    public GoogleCloudPricingCalculatorPage selectNoneCommittedUse() {
+        noneCommittedUseButton.click();
         return this;
     }
 
@@ -182,19 +201,24 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         return this;
     }
 
+    public GoogleCloudPricingCalculatorPage selectThreeYearCommittedUse() {
+        threeYearsCommittedUseButton.click();
+        return this;
+    }
+
     public AddToEstimatePopUp clickAddToEstimateOnCostDetailsButton(){
-        waitForElementVisibility(webDriver, addToEstimateOnCostDetailsButton, 10);
+        waitForElementVisibility(driver, addToEstimateOnCostDetailsButton, 10);
         addToEstimateOnCostDetailsButton.click();
-        return new AddToEstimatePopUp(webDriver);
+        return new AddToEstimatePopUp(driver);
     }
 
     public ShareCostPopUp clickShareButton() {
         shareButton.click();
-        return new ShareCostPopUp(webDriver);
+        return new ShareCostPopUp(driver);
     }
 
     public String getEstimateCost() {
-        waitForElementVisibility(webDriver, serviceCostUpdateMessage, 10);
+        waitForElementVisibility(driver, serviceCostUpdateMessage, 10);
         return estimateCost.getText();
     }
 }

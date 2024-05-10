@@ -6,16 +6,16 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 
 public abstract class BaseTest {
-    protected WebDriver webDriver;
+    protected WebDriver driver;
 
     @BeforeEach
     public void setUp(){
-        webDriver = DriverSingleton.getDriver();
+        driver = DriverSingleton.getDriver();
     }
 
     @AfterEach
     public void tearDown(){
         DriverSingleton.closeDriver();
-        webDriver = null;
+        driver = null;
     }
 }
