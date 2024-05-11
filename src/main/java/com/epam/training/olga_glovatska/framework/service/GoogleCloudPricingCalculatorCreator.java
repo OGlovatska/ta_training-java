@@ -12,6 +12,7 @@ import static com.epam.training.olga_glovatska.framework.util.GoogleCloudPricing
 
 public class GoogleCloudPricingCalculatorCreator {
     private static final String SEARCH_REQUEST = "test.data.search.request";
+    private static final String SEARCH_PAGE_TITLE = "test.data.search.page.title";
     private static final String NUMBER_OF_INSTANCES = "test.data.number.of.instances";
     private static final String OPERATION_SYSTEM = "test.data.operation.system";
     private static final String PROVISION_MODEL = "test.data.provision.model";
@@ -27,6 +28,10 @@ public class GoogleCloudPricingCalculatorCreator {
 
     public static String getSearchRequest() {
         return getTestData(SEARCH_REQUEST);
+    }
+
+    public static String getSearchPageTitle(){
+        return getTestData(SEARCH_PAGE_TITLE);
     }
 
     public static GoogleCloudPricingCalculator createGoogleCloudPricingCalculatorModel() {

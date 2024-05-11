@@ -13,4 +13,8 @@ public abstract class BasePage {
     }
 
     protected abstract BasePage openPage();
+
+    public String getPageTitle(){
+        return driver.getTitle();
+    }
 }

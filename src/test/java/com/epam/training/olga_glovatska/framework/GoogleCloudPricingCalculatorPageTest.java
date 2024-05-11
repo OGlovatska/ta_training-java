@@ -6,11 +6,11 @@ import com.epam.training.olga_glovatska.framework.page.GoogleCloudMainPage;
 import com.epam.training.olga_glovatska.framework.page.GoogleCloudPricingCalculatorPage;
 import com.epam.training.olga_glovatska.framework.page.GoogleCloudSearchResultPage;
 import com.epam.training.olga_glovatska.framework.page.popup.ShareCostPopUp;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 import static com.epam.training.olga_glovatska.framework.assertions.GoogleCloudPricingCalculatorAssertions.*;
 import static com.epam.training.olga_glovatska.framework.service.GoogleCloudPricingCalculatorCreator.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.testng.Assert.assertEquals;
 
 public class GoogleCloudPricingCalculatorPageTest extends BaseTest {
 
