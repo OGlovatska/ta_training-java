@@ -1,6 +1,5 @@
 package com.epam.training.olga_glovatska.framework.driver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -12,18 +11,9 @@ public class DriverSingleton {
     public static WebDriver getDriver() {
         if (driver == null) {
             switch (System.getProperty("browser")) {
-                case "firefox" -> {
-                    WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver();
-                }
-                case "edge" -> {
-                    WebDriverManager.edgedriver().setup();
-                    driver = new EdgeDriver();
-                }
-                default -> {
-                    WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
-                }
+                case "firefox" -> driver = new FirefoxDriver();
+                case "edge" -> driver = new EdgeDriver();
+                default -> driver = new ChromeDriver();
             }
             driver.manage().window().maximize();
         }

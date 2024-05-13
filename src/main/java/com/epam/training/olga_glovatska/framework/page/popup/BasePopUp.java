@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.Set;
 
-public class BasePopUp {
+public abstract class BasePopUp {
     protected final WebDriver driver;
 
     public BasePopUp(WebDriver driver) {
