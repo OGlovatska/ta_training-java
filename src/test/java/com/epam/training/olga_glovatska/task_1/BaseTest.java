@@ -1,20 +1,20 @@
 package com.epam.training.olga_glovatska.task_1;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 public abstract class BaseTest {
     protected WebDriver webDriver;
 
-    @BeforeEach
+    @BeforeMethod
     public void setUp(){
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
     }
 
-    @AfterEach
+    @AfterMethod
     public void tearDown(){
         if (webDriver != null) {
             webDriver.quit();

@@ -5,10 +5,10 @@ import com.epam.training.olga_glovatska.task_3.page.GoogleCloudMainPage;
 import com.epam.training.olga_glovatska.task_3.page.GoogleCloudPlatformPricingCalculatorPage;
 import com.epam.training.olga_glovatska.task_3.page.GoogleCloudSearchResultPage;
 import com.epam.training.olga_glovatska.task_3.page.popup.ShareCostPopUp;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 import static com.epam.training.olga_glovatska.task_3.util.TestData.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.testng.Assert.assertEquals;
 
 public class GoogleCloudPlatformPricingCalculatorPageTest extends BaseTest {
 

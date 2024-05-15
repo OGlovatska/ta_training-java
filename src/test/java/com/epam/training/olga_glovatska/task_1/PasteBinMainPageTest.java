@@ -2,10 +2,10 @@ package com.epam.training.olga_glovatska.task_1;
 
 import com.epam.training.olga_glovatska.task_1.page.PasteBinMainPage;
 import com.epam.training.olga_glovatska.task_1.page.PasteBinResultPage;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 import static com.epam.training.olga_glovatska.task_1.util.TestData.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.testng.Assert.assertEquals;
 
 public class PasteBinMainPageTest extends BaseTest{
 
